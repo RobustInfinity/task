@@ -1,5 +1,6 @@
 
 
+
 //checking for null, undefined, empty string and object
 const isEmpty = value => 
     value === null || value === undefined || 
