@@ -4,6 +4,10 @@ const Schema = mongoose.Schema
 //creating userSchema
 const UserSchema = new Schema({
    
+    userId : {
+        required : true,
+        type : String
+    },
     name : {
         required : true,
         type : String
@@ -13,14 +17,14 @@ const UserSchema = new Schema({
         type : String,
         unique : true
     },
-    dob : {
-        required : true,
-        type : Date
-    },
-    phoneNumber : {
+    password : {
         required : true,
         type : String
-    }
+    },
+    notes : [{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'notes'
+    }]
 })
 
 const User = mongoose.model('users', UserSchema)
